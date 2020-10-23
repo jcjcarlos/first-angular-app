@@ -1,0 +1,26 @@
+<h2>Produtos</h2>
+
+<div *ngFor="let objeto of objetos"> 
+  <h3>
+    <a [title]="objeto.name + ' detalhes'">
+      {{ objeto.name }}
+    </a>
+  </h3>
+
+    <p style="color:red; padding-right:9px;" *ngIf="objeto.description">
+      Descrição: {{ objeto.description }}
+    </p>
+
+    <button (click)="share2('Olha!')">
+      Compartilhar
+    </button>
+
+    <app-product-alerts [product]="objeto" (notify)="onNotify()">
+    </app-product-alerts>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
