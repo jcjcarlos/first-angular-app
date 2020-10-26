@@ -1,23 +1,26 @@
-<h2>Produtos</h2>
+<h2>Productos</h2>
 
-<div *ngFor="let objeto of objetos"> 
-  <h3>
-    <a [title]="objeto.name + ' detalhes'">
-      {{ objeto.name }}
-    </a>
-  </h3>
+<div *ngFor="let productItemProductListComponent of productListProductListComponent">
+	<h3>
+		<a [title]="'Click here for details of product: ' + productItemProductListComponent.name">
+			{{productItemProductListComponent.name}}
+		</a>
 
-    <p style="color:red; padding-right:9px;" *ngIf="objeto.description">
-      Descrição: {{ objeto.description }}
-    </p>
+		<p *ngIf="productItemProductListComponent.description">
+			Description: {{productItemProductListComponent.description}}
+		</p>
 
-    <button (click)="share2('Olha!')">
-      Compartilhar
+		<button (click)="shareProduct()">
+      Share Product!
     </button>
 
-    <app-product-alerts [product]="objeto" (notify)="onNotify()">
-    </app-product-alerts>
+		<app-product-alerts [productProxy]="productItemProductListComponent" (notifyProxy)="onNotifyByProductAlert()"
+		>
+		</app-product-alerts>
+
+	</h3>
 </div>
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

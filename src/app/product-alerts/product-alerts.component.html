@@ -1,7 +1,5 @@
-<p>
-product-alerts works!
-</p>
-
-<p *ngIf="product.price > 700">
-  <button (click)="notify.emit()">Notificar</button>
+<p *ngIf="productItemProductAlertComponent.price > 700" >  
+  <button (click)="notifyProductAlertComponent.emit()" >
+    Notify me!
+  </button>
 </p>

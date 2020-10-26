@@ -1,28 +1,28 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { objetos } from '../products';
+import listProductsFromFile from "../exportedProducts";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent {
-  objetos = objetos;
+  //All properties defined in this class are acessible in tamplates or in another Component. For Component than received the data, it used @Input Decorator,
+  productListProductListComponent = listProductsFromFile;
 
   share() {
-    window.alert('The product has been shared!');
+    window.alert("The product has been shared!");
   }
 
-  share2(arg :String){
-    alert('Olha o Share! ' + arg);
+  shareProduct() {
+    alert("You shared this product!");
   }
 
-  onNotify(){
-    alert('Você receberá notificação na venda do produto: ');
+  onNotifyByProductAlert(){
+    alert('You will be notified! We want you buy it!');
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
